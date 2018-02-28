@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #pre: does NOT include stored science in monthly progress
 import sys
 
