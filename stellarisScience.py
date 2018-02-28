@@ -87,7 +87,7 @@ def addSystem():
     print(f'New phy cost(after): {phyBaseCost * penalty}')
 
     if difference < 0:
-        print(f'\nAdding this system will DECREASE total research time by {difference}')
+        print(f'\nAdding this system will DECREASE total research time by {-difference}')
     else:
         print(f'\nAdding this system will INCREASE total research time by {difference}')
 
