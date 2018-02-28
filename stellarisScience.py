@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#pre: does NOT include stored science in monthly progress
+# pre: does NOT include stored science in monthly progress
 import sys
 
 
@@ -37,17 +37,17 @@ def addSystem():
     socBaseCost = float(input("Society base cost: "))
     engBaseCost = float(input("Engineering base cost: "))
 
-    #Amount of Science in the system (NOT including modifiers)
+    # Amount of Science in the system (NOT including modifiers)
     phySciVal = float(input("\nSystem science value (Physics): "))
     socSciVal = float(input("System science value (Society): "))
     engSciVal = float(input("System science value (Engineering): "))
 
-    #Science percent modifiers from research tab
+    # Science percent modifiers from research tab
     phySciMod = float(input("\nPhysics science modifier (Integer): "))
     socSciMod = float(input("Society science modifier (Integer): "))
     engSciMod = float(input("Enginee science modifier (Integer): "))
 
-    #Base Science gain
+    # Base Science gain
     phyBaseGain = float(input("\nPhysics science base gain: "))
     socBaseGain = float(input("Society science base gain: "))
     engBaseGain = float(input("Engineering Science base gain: "))
@@ -60,7 +60,7 @@ def addSystem():
     socSciMod += 1
     engSciMod += 1
 
-    #oldCost and newCost are in months (time to complete total research)
+    # oldCost and newCost are in months (time to complete total research)
 
     penalty = 1 + ((planetCost * sigPlanets) +\
               (systemCost * sigSystems))
@@ -73,7 +73,7 @@ def addSystem():
     socTotal = (socBaseGain + (socSciVal * pacifistMod)) * socSciMod
     engTotal = (engBaseGain + (engSciVal * pacifistMod)) * engSciMod
 
-    #Adds new system to penalty
+    # Adds new system to penalty
     penalty += systemCost
 
     newCost = ((phyBaseCost * penalty)/phyTotal) +\
@@ -109,17 +109,17 @@ def removeSystem():
     socBaseCost = float(input("Society base cost: "))
     engBaseCost = float(input("Engineering base cost: "))
 
-    #Amount of Science in the system (NOT including modifiers)
+    # Amount of Science in the system (NOT including modifiers)
     phySciVal = float(input("\nSystem science value (Physics): "))
     socSciVal = float(input("System science value (Society): "))
     engSciVal = float(input("System science value (Engineering): "))
 
-    #Science percent modifiers from research tab
+    # Science percent modifiers from research tab
     phySciMod = float(input("\nPhysics science modifier (Integer): "))
     socSciMod = float(input("Society science modifier (Integer): "))
     engSciMod = float(input("Engineering science modifier (Integer): "))
 
-    #Base Science gain
+    # Base Science gain
     phyBaseGain = float(input("\nPhysics science base gain: "))
     socBaseGain = float(input("Society science base gain: "))
     engBaseGain = float(input("Engineering Science base gain: "))
@@ -132,7 +132,7 @@ def removeSystem():
     socSciMod += 1
     engSciMod += 1
 
-    #oldCost and newCost are in months (time to complete total research)
+    # oldCost and newCost are in months (time to complete total research)
 
     penalty = 1 + ((planetCost * sigPlanets) +\
               (systemCost * sigSystems))
@@ -145,7 +145,7 @@ def removeSystem():
     socTotal = (socBaseGain - (socSciVal * pacifistMod)) * socSciMod
     engTotal = (engBaseGain - (engSciVal * pacifistMod)) * engSciMod
 
-    #Adds new system to penalty
+    # Adds new system to penalty
     penalty -= systemCost
 
     newCost = ((phyBaseCost * penalty)/phyTotal) +\
