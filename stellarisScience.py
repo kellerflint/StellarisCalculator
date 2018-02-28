@@ -170,19 +170,21 @@ def main():
 
         try:
             option = int(input("\n0) exit 1) total cost in months 2) Add a system 3) remove a system: "))
-        except EOFError:
-            option = 0
 
-        if (option == 1):
-            monthsCost()
-        elif (option == 2):
-            addSystem()
-        elif (option == 3):
-            removeSystem()
-        elif (option == 0):
+            if (option == 1):
+                monthsCost()
+            elif (option == 2):
+                addSystem()
+            elif (option == 3):
+                removeSystem()
+            elif (option == 0):
+                print("Exiting...")
+            else:
+                print("No valid option selected.")
+
+        except EOFError:
             print("Exiting...")
-        else:
-            print("No valid option selected.")
+            break
 
 if __name__ == '__main__':
     main()
