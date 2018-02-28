@@ -168,7 +168,10 @@ def main():
 
     while (option != 0):
 
-        option = int(input("\n0) exit 1) total cost in months 2) Add a system 3) remove a system: "));
+        try:
+            option = int(input("\n0) exit 1) total cost in months 2) Add a system 3) remove a system: "));
+        except EOFError:
+            option = 0
 
         if (option == 1):
             monthsCost();
