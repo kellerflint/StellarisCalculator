@@ -45,7 +45,7 @@ def addSystem():
     # Science percent modifiers from research tab
     phySciMod = float(input("\nPhysics science modifier (Integer): "))
     socSciMod = float(input("Society science modifier (Integer): "))
-    engSciMod = float(input("Enginee science modifier (Integer): "))
+    engSciMod = float(input("Engineering science modifier (Integer): "))
 
     # Base Science gain
     phyBaseGain = float(input("\nPhysics science base gain: "))
