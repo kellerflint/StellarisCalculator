@@ -3,6 +3,7 @@
 #pre: does NOT include stored science in monthly progress
 import sys
 
+
 def monthsCost():
     print("This calculates the combined cost in months of all given research.")
 
@@ -17,6 +18,7 @@ def monthsCost():
     totalMonths = (phyTotalCost/phyMonthProg) + (socTotalCost/socMonthProg) + (engTotalCost/engMonthProg)
 
     print(f"\nTotal Months = {totalMonths}")
+
 
 def addSystem():
     systemCost = .02
@@ -89,6 +91,7 @@ def addSystem():
     else:
         print(f'\nAdding this system will INCREASE total research time by {difference}')
 
+
 def removeSystem():
     systemCost = .02
     planetCost = .05
@@ -160,6 +163,7 @@ def removeSystem():
     else:
         print(f'\nRemoving this system will INCREASE total research time by {difference}')
 
+
 def main():
 
     print("This program provides some tools for Stellaris science calculations.")
@@ -185,6 +189,7 @@ def main():
         except EOFError:
             print("Exiting...")
             break
+
 
 if __name__ == '__main__':
     main()
