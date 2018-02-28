@@ -84,7 +84,7 @@ def addSystem():
     print('phy penalty (before): ', penalty)
     print('New phy cost(after): ', phyBaseCost * penalty)
 
-    if (difference < 0):
+    if difference < 0:
         print('\nAdding this system will DECREASE total research time by ', difference)
     else:
         print('\nAdding this system will INCREASE total research time by ', difference)
@@ -155,7 +155,7 @@ def removeSystem():
     print('phy penalty (before): ', penalty)
     print('New phy cost(after): ', phyBaseCost * penalty)
 
-    if (difference < 0):
+    if difference < 0:
         print('\nRemoving this system will DECREASE total research time by ', difference)
     else:
         print('\nRemoving this system will INCREASE total research time by ', difference)
@@ -166,18 +166,18 @@ def main():
 
     option = 1
 
-    while (option != 0):
+    while option != 0:
 
         try:
             option = int(input("\n0) exit 1) total cost in months 2) Add a system 3) remove a system: "))
 
-            if (option == 1):
+            if option == 1:
                 monthsCost()
-            elif (option == 2):
+            elif option == 2:
                 addSystem()
-            elif (option == 3):
+            elif option == 3:
                 removeSystem()
-            elif (option == 0):
+            elif option == 0:
                 print("Exiting...")
             else:
                 print("No valid option selected.")
