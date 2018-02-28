@@ -159,7 +159,7 @@ def removeSystem():
     print(f'New phy cost(after): {phyBaseCost * penalty}')
 
     if difference < 0:
-        print(f'\nRemoving this system will DECREASE total research time by {difference}')
+        print(f'\nRemoving this system will DECREASE total research time by {-difference}')
     else:
         print(f'\nRemoving this system will INCREASE total research time by {difference}')
 
