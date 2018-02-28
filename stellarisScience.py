@@ -16,7 +16,7 @@ def monthsCost():
 
     totalMonths = (phyTotalCost/phyMonthProg) + (socTotalCost/socMonthProg) + (engTotalCost/engMonthProg)
 
-    print("\nTotal Months = ", totalMonths)
+    print(f"\nTotal Months = {totalMonths}")
 
 def addSystem():
     systemCost = .02
@@ -80,14 +80,14 @@ def addSystem():
 
     difference = newCost - oldCost
 
-    print('Base phy test: ', (phyBaseGain * phySciMod))
-    print('phy penalty (before): ', penalty)
-    print('New phy cost(after): ', phyBaseCost * penalty)
+    print(f'Base phy test: {(phyBaseGain * phySciMod)}')
+    print(f'phy penalty (before): {penalty}')
+    print(f'New phy cost(after): {phyBaseCost * penalty}')
 
     if difference < 0:
-        print('\nAdding this system will DECREASE total research time by ', difference)
+        print(f'\nAdding this system will DECREASE total research time by {difference}')
     else:
-        print('\nAdding this system will INCREASE total research time by ', difference)
+        print(f'\nAdding this system will INCREASE total research time by {difference}')
 
 def removeSystem():
     systemCost = .02
@@ -151,14 +151,14 @@ def removeSystem():
 
     difference = newCost - oldCost
 
-    print('Base phy test: ', (phyBaseGain * phySciMod))
-    print('phy penalty (before): ', penalty)
-    print('New phy cost(after): ', phyBaseCost * penalty)
+    print(f'Base phy test: {(phyBaseGain * phySciMod)}')
+    print(f'phy penalty (before): {penalty}')
+    print(f'New phy cost(after): {phyBaseCost * penalty}')
 
     if difference < 0:
-        print('\nRemoving this system will DECREASE total research time by ', difference)
+        print(f'\nRemoving this system will DECREASE total research time by {difference}')
     else:
-        print('\nRemoving this system will INCREASE total research time by ', difference)
+        print(f'\nRemoving this system will INCREASE total research time by {difference}')
 
 def main():
 
