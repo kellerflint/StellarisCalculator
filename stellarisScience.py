@@ -9,11 +9,11 @@ def monthsCost():
 
     phyTotalCost = float(input("\nPhysics total cost: "))
     socTotalCost = float(input("Society total cost: "))
-    engTotalCost = float(input("Enginee total cost: "))
+    engTotalCost = float(input("Engineering total cost: "))
 
     phyMonthProg = float(input("\nPhysics monthly progress: "))
     socMonthProg = float(input("Society monthly progress: "))
-    engMonthProg = float(input("Enginee monthly progress: "))
+    engMonthProg = float(input("Engineering monthly progress: "))
 
     totalMonths = (phyTotalCost/phyMonthProg) + (socTotalCost/socMonthProg) + (engTotalCost/engMonthProg)
 
@@ -35,22 +35,22 @@ def addSystem():
 
     phyBaseCost = float(input("\nPhysics base cost: "))
     socBaseCost = float(input("Society base cost: "))
-    engBaseCost = float(input("Enginee base cost: "))
+    engBaseCost = float(input("Engineering base cost: "))
 
     #Amount of Science in the system (NOT including modifiers)
-    phySciVal = float(input("\nSystem science value(physics): "))
-    socSciVal = float(input("System science value(society): "))
-    engSciVal = float(input("System science value(enginee): "))
+    phySciVal = float(input("\nSystem science value (Physics): "))
+    socSciVal = float(input("System science value (Society): "))
+    engSciVal = float(input("System science value (Engineering): "))
 
-    #Science percent modifers from research tab
-    phySciMod = float(input("\nPhysics science modifer(integer): "))
-    socSciMod = float(input("Society science modifer(integer): "))
-    engSciMod = float(input("Enginee science modifer(integer): "))
+    #Science percent modifiers from research tab
+    phySciMod = float(input("\nPhysics science modifier (Integer): "))
+    socSciMod = float(input("Society science modifier (Integer): "))
+    engSciMod = float(input("Enginee science modifier (Integer): "))
 
     #Base Science gain
     phyBaseGain = float(input("\nPhysics science base gain: "))
     socBaseGain = float(input("Society science base gain: "))
-    engBaseGain = float(input("Enginee Science base gain: "))
+    engBaseGain = float(input("Engineering Science base gain: "))
 
     phySciMod *= .01
     socSciMod *= .01
@@ -82,9 +82,9 @@ def addSystem():
 
     difference = newCost - oldCost
 
-    print(f'Base phy test: {(phyBaseGain * phySciMod)}')
-    print(f'phy penalty (before): {penalty}')
-    print(f'New phy cost(after): {phyBaseCost * penalty}')
+    print(f'Base physics test: {(phyBaseGain * phySciMod)}')
+    print(f'Physics penalty (Before): {penalty}')
+    print(f'New physics cost(After): {phyBaseCost * penalty}')
 
     if difference < 0:
         print(f'\nAdding this system will DECREASE total research time by {-difference}')
@@ -107,22 +107,22 @@ def removeSystem():
 
     phyBaseCost = float(input("\nPhysics base cost: "))
     socBaseCost = float(input("Society base cost: "))
-    engBaseCost = float(input("Enginee base cost: "))
+    engBaseCost = float(input("Engineering base cost: "))
 
     #Amount of Science in the system (NOT including modifiers)
-    phySciVal = float(input("\nSystem science value(physics): "))
-    socSciVal = float(input("System science value(society): "))
-    engSciVal = float(input("System science value(enginee): "))
+    phySciVal = float(input("\nSystem science value (Physics): "))
+    socSciVal = float(input("System science value (Society): "))
+    engSciVal = float(input("System science value (Engineering): "))
 
-    #Science percent modifers from research tab
-    phySciMod = float(input("\nPhysics science modifer(integer): "))
-    socSciMod = float(input("Society science modifer(integer): "))
-    engSciMod = float(input("Enginee science modifer(integer): "))
+    #Science percent modifiers from research tab
+    phySciMod = float(input("\nPhysics science modifier (Integer): "))
+    socSciMod = float(input("Society science modifier (Integer): "))
+    engSciMod = float(input("Engineering science modifier (Integer): "))
 
     #Base Science gain
     phyBaseGain = float(input("\nPhysics science base gain: "))
     socBaseGain = float(input("Society science base gain: "))
-    engBaseGain = float(input("Enginee Science base gain: "))
+    engBaseGain = float(input("Engineering Science base gain: "))
 
     phySciMod *= .01
     socSciMod *= .01
@@ -154,9 +154,9 @@ def removeSystem():
 
     difference = newCost - oldCost
 
-    print(f'Base phy test: {(phyBaseGain * phySciMod)}')
-    print(f'phy penalty (before): {penalty}')
-    print(f'New phy cost(after): {phyBaseCost * penalty}')
+    print(f'Base physics test: {(phyBaseGain * phySciMod)}')
+    print(f'Physics penalty (Before): {penalty}')
+    print(f'New physics cost (After): {phyBaseCost * penalty}')
 
     if difference < 0:
         print(f'\nRemoving this system will DECREASE total research time by {-difference}')
