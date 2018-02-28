@@ -184,4 +184,5 @@ def main():
         else:
             print("No valid option selected.")
 
-main()
+if __name__ == '__main__':
+    main()
