@@ -81,10 +81,6 @@ def addSystem():
 
     difference = newCost - oldCost
 
-    print(f'Base physics test: {(phyBaseGain * phySciMod)}')
-    print(f'Physics penalty (Before): {penalty}')
-    print(f'New physics cost(After): {phyBaseCost * penalty}')
-
     if difference < 0:
         print(f'\nAdding this system will DECREASE total research time by {-difference}')
     else:
@@ -152,10 +148,6 @@ def removeSystem():
               ((engBaseCost * penalty)/engTotal)
 
     difference = newCost - oldCost
-
-    print(f'Base physics test: {(phyBaseGain * phySciMod)}')
-    print(f'Physics penalty (Before): {penalty}')
-    print(f'New physics cost (After): {phyBaseCost * penalty}')
 
     if difference < 0:
         print(f'\nRemoving this system will DECREASE total research time by {-difference}')
