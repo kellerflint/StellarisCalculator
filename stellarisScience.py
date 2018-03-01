@@ -22,12 +22,12 @@ def monthsCost():
 def addSystem():
     systemCost = .02
     planetCost = .05
-    pacifistDegree = int(input("What degree of pacifist are you? (0-Not pacifist 1-pacifist 2-Fanatic pacifist): "))
+    pacifistDegree = int(input("What degree of pacifist are you? (0-Not pacifist; 1-pacifist; 2-Fanatic pacifist): "))
 
     pacifistMod = 1 + (pacifistDegree * .05)
 
     sigSystems = int(input("\nTotal number of systems (before addition): "))
-    sigPlanets = int(input("\nTotal number of planets: "))
+    sigPlanets = int(input("Total number of planets: "))
 
     sigSystems -= 1
     sigPlanets -= 1
@@ -94,12 +94,12 @@ def addSystem():
 def removeSystem():
     systemCost = .02
     planetCost = .05
-    pacifistDegree = int(input("What degree of pacifist are you? (0-Not pacifist 1-pacifist 2-Fanatic pacifist): "))
+    pacifistDegree = int(input("What degree of pacifist are you? (0-Not pacifist; 1-pacifist; 2-Fanatic pacifist): "))
 
     pacifistMod = 1 + (pacifistDegree * .05)
 
     sigSystems = int(input("\nTotal number of systems (before removal): "))
-    sigPlanets = int(input("\nTotal number of planets: "))
+    sigPlanets = int(input("Total number of planets: "))
 
     sigSystems -= 1
     sigPlanets -= 1
@@ -167,6 +167,7 @@ def removeSystem():
 #NOTE This is probably gonna provide a low estimate (because ignoring non-generic bonuses and integer base costs).
 #I think this is fine since the math is providing the break even point. But ideally you're gaining not
 #just breaking even anyways. (at least for my science min/maxing)
+
 def reqSysSci():
     print("Will return the minimum amount of science a system requires to break even with its research penalties.")
     #Pacifist modifier
@@ -178,7 +179,7 @@ def reqSysSci():
     avgBaseCost = float(input("\nEnter the AVERAGE BASE COST of your current (or typical) research: "))
 
     #Science modifiers (combined [generic bonus only] (what about the constant bonuses? - none significant?)
-    genSciMod = float(input("\nEnter your total GENERIC SCIENCE MODIFIER (int): "))
+    genSciMod = float(input("\nEnter your total GENERIC SCIENCE MODIFIER (Integer): "))
 
     genSciMod *= .01
     genSciMod += 1
@@ -258,8 +259,8 @@ def main():
     while option != 0:
 
         try:
-            option = int(input("0) exit \n1) total cost in months \n2) Add a system " +
-                               "\n3) remove a system\n4) Find Required System Science\n"))
+            option = int(input("0) Exit \n1) Total cost in months \n2) Add a system " +
+                               "\n3) Remove a system\n4) Find Required System Science\n"))
 
             if option == 0:
                 print("Exiting...")
