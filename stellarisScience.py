@@ -210,9 +210,9 @@ def reqSysSci():
         avgTechCost = penalty * avgBaseCost
 
         #Approximate combined average research
-        avgResearch = ((1/basePerMonth[0]) * genSciMod) +\
-                      ((1/basePerMonth[1]) * genSciMod) +\
-                      ((1/basePerMonth[2]) * genSciMod)
+        avgResearch = (1/(basePerMonth[0] * genSciMod)) +\
+                      (1/(basePerMonth[1] * genSciMod)) +\
+                      (1/(basePerMonth[2] * genSciMod))
         #originalCost is in months (average to complete level of research)
         originalCost = avgTechCost * avgResearch #avgResearch is < 1
 

@@ -38,9 +38,9 @@ function sysSciReq() {
     var avgTechCost = penalty * avgBaseCost;
 
     // Approximate combined average research
-    var avgResearch = ((1/basePHY) * genSciMod) +
-                      ((1/baseSOC) * genSciMod) +
-                      ((1/baseENG) * genSciMod);
+    var avgResearch = (1/(basePHY * genSciMod)) +
+                      (1/(baseSOC * genSciMod)) +
+                      (1/(baseENG * genSciMod));
 
     // OriginalCost is in months (average to complete level of research)
     var originalCost = avgTechCost * avgResearch // where avgResearch < 1;
@@ -51,13 +51,17 @@ function sysSciReq() {
 
     avgTechCost = penalty * avgBaseCost;
 
-    avgResearch =  (1/(basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod) +
-                   (1/(baseSOC + ((reqSciPerSys/3) * pacifistMod))*genSciMod) +
-                   (1/(baseENG + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
+    avgResearch =  (1/((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod)) +
+                   (1/((baseSOC + ((reqSciPerSys/3) * pacifistMod))*genSciMod)) +
+                   (1/((baseENG + ((reqSciPerSys/3) * pacifistMod))*genSciMod));
 
-    document.getElementById("output4").innerHTML = "originalCost " + originalCost;
+    document.getElementById("output2").innerHTML = "sci " + ((reqSciPerSys/3));
 
-    newCost = avgTechCost * avgResearch;
+    document.getElementById("output3").innerHTML = "originalCost " + originalCost;
+
+    var newCost = avgTechCost * avgResearch;
+
+    document.getElementById("output4").innerHTML = "newCost " + newCost;
 
     difference = newCost - originalCost;
 
