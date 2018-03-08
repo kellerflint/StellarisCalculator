@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts.js"></script>
+  <title>Stellaris Calculator</title>
+</head>
+<body>
+  <p>
+    This is the Stellaris Calculator!
+  </p>
+
+  <form id="f_sysSciReq">
+    Enter your degree of PACIFISM (0-Not pacifist 1-pacifist 2-Fanatic pacifist): <input type="number" class="numInput" id="i_pacifist"><br>
+    Enter the AVERAGE BASE COST of your current (or typical) research:            <input type="number" class="numInput" id="i_avgBaseCost"><br>
+    Enter your total GENERIC SCIENCE MODIFIER (as integer):                       <input type="number" class="numInput" id="i_genSciMod"><br><br>
+    Enter your total number of SYSTEMS:                                           <input type="number" class="numInput" id="i_systemNum"><br>
+    Enter your total number of PLANETS:                                           <input type="number" class="numInput" id="i_planetNum"><br><br>
+    Enter your BASE PHYSICS/month:                                                <input type="number" class="numInput" id="i_basePHY"><br>
+    Enter your BASE SOCIETY/month:                                                <input type="number" class="numInput" id="i_baseSOC"><br>
+    Enter your BASE ENGINEERING/month:                                            <input type="number" class="numInput" id="i_baseENG"><br>
+    <input id="submit" type="button" value="submit" onclick="sysSciReq()">
+  </form>
+
+  <p id="result"></p>
+  <p id="output1"></p>
+  <p id="output2"></p>
+  <p id="output3"></p>
+  <p id="output4"></p>
+  <p id="output5"></p>
+
+</body>
+
+</html>

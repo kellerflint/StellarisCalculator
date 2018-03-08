@@ -213,9 +213,11 @@ def reqSysSci():
         avgResearch = ((1/basePerMonth[0]) * genSciMod) +\
                       ((1/basePerMonth[1]) * genSciMod) +\
                       ((1/basePerMonth[2]) * genSciMod)
-
         #originalCost is in months (average to complete level of research)
         originalCost = avgTechCost * avgResearch #avgResearch is < 1
+
+        print("avg", avgResearch)
+        print("orig", originalCost)
 
         #############
         ###newCost###
@@ -235,11 +237,13 @@ def reqSysSci():
 
         difference = newCost - originalCost
 
+        print("diff", difference)
+
         if difference > 0:
             reqSciPerSys += 1
 
     print(f'\nNew systems must have at a minimum of {reqSciPerSys} science to break even after tech penalty.')
-
+    print(f'\nAquiring a system with {reqSciPerSys} science will improve your average research time by {difference} months.')
 
 
 def main():
