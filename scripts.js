@@ -84,7 +84,7 @@ function sysSciReq() {
     }
 }
 
-document.getElementById("result").innerHTML = reqSciPerSys;
+document.getElementById("result").innerHTML = "New systems require a minimum of " + reqSciPerSys + " science to break even after tech penalty."
 
 
 

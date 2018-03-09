@@ -11,19 +11,20 @@
     This is the Stellaris Calculator!
   </p>
 
-  <form id="f_sysSciReq">
-    Enter your degree of PACIFISM (0-Not pacifist 1-pacifist 2-Fanatic pacifist): <input type="number" class="numInput" id="i_pacifist"><br>
-    Enter the AVERAGE BASE COST of your current (or typical) research:            <input type="number" class="numInput" id="i_avgBaseCost"><br>
-    Enter your total GENERIC SCIENCE MODIFIER (as integer):                       <input type="number" class="numInput" id="i_genSciMod"><br><br>
-    Enter your total number of SYSTEMS:                                           <input type="number" class="numInput" id="i_systemNum"><br>
-    Enter your total number of PLANETS:                                           <input type="number" class="numInput" id="i_planetNum"><br><br>
-    Enter your BASE PHYSICS/month:                                                <input type="number" class="numInput" id="i_basePHY"><br>
-    Enter your BASE SOCIETY/month:                                                <input type="number" class="numInput" id="i_baseSOC"><br>
-    Enter your BASE ENGINEERING/month:                                            <input type="number" class="numInput" id="i_baseENG"><br>
-    <input id="submit" type="button" value="submit" onclick="sysSciReq()">
-  </form>
-
-  <p id="result"></p>
+  <div id="d_sysSciReq">
+    <form id="f_sysSciReq">
+      Enter your degree of <b>PACIFISM</b> (0-Not pacifist 1-pacifist 2-Fanatic pacifist): <input type="number" class="numInput" id="i_pacifist">
+      Enter the <b>AVERAGE BASE COST</b> of your current (or typical) research:            <input type="number" class="numInput" id="i_avgBaseCost"><br>
+      Enter your total <b>GENERIC SCIENCE MODIFIER</b> (as integer):                       <input type="number" class="numInput" id="i_genSciMod"><br><br>
+      Enter your total number of <b>SYSTEMS</b>:                                           <input type="number" class="numInput" id="i_systemNum"><br>
+      Enter your total number of <b>PLANETS</b>:                                           <input type="number" class="numInput" id="i_planetNum"><br><br>
+      Enter your BASE <b>PHYSICS</b>/month:                                                <input type="number" class="numInput" id="i_basePHY"><br>
+      Enter your BASE <b>SOCIETY</b>/month:                                                <input type="number" class="numInput" id="i_baseSOC"><br>
+      Enter your BASE <b>ENGINEERING</b>/month:                                            <input type="number" class="numInput" id="i_baseENG"><br>
+      <input id="submit" type="button" value="submit" onclick="sysSciReq()">
+    </form>
+    <p id="result"><i>Result</i></p>
+  </div>
   <p id="output1"></p>
   <p id="output2"></p>
   <p id="output3"></p>
