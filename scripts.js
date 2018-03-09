@@ -15,6 +15,10 @@ function sysSciReq() {
   var baseSOC = document.getElementById("i_baseSOC").value;
   var baseENG = document.getElementById("i_baseENG").value;
 
+  basePHY = + basePHY;
+  baseSOC = + baseSOC;
+  baseENG = + baseENG;
+
   // Change user input to internal format
   pacifistMod = 1 + (pacifistMod * .05);
   genSciMod = 1 + (genSciMod * .01);
@@ -43,7 +47,7 @@ function sysSciReq() {
                       (1/(baseENG * genSciMod));
 
     // OriginalCost is in months (average to complete level of research)
-    var originalCost = avgTechCost * avgResearch // where avgResearch < 1;
+    var originalCost = avgTechCost * avgResearch; // where avgResearch < 1;
     // ---New cost---
 
     // Additional system incurs system science penalty
@@ -67,9 +71,13 @@ function sysSciReq() {
 
     document.getElementById("output5").innerHTML = "full: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
 
+    document.getElementById("output6").innerHTML = "type of base: " + (typeof basePHY);
+
+    document.getElementById("output7").innerHTML = "type of base: " + (typeof newCost);
+
     difference = newCost - originalCost;
 
-    document.getElementById("output6").innerHTML = "diff " + difference;
+    document.getElementById("output8").innerHTML = "diff " + difference;
 
     if (difference > 0) {
         reqSciPerSys = reqSciPerSys + 1;
