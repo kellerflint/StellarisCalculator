@@ -55,17 +55,21 @@ function sysSciReq() {
                    (1/((baseSOC + ((reqSciPerSys/3) * pacifistMod))*genSciMod)) +
                    (1/((baseENG + ((reqSciPerSys/3) * pacifistMod))*genSciMod));
 
-    document.getElementById("output2").innerHTML = "sci " + ((reqSciPerSys/3));
-
-    document.getElementById("output3").innerHTML = "originalCost " + originalCost;
-
     var newCost = avgTechCost * avgResearch;
 
-    document.getElementById("output4").innerHTML = "newCost " + newCost;
+    document.getElementById("output1").innerHTML = "reqSciPerSys/3: " + ((reqSciPerSys/3));
+
+    document.getElementById("output2").innerHTML = "basePHY: " + basePHY;
+
+    document.getElementById("output3").innerHTML = "pacifistMod: " + pacifistMod;
+
+    document.getElementById("output4").innerHTML = "genSciMod: " + genSciMod;
+
+    document.getElementById("output5").innerHTML = "full: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
 
     difference = newCost - originalCost;
 
-    document.getElementById("output5").innerHTML = "diff " + difference;
+    document.getElementById("output6").innerHTML = "diff " + difference;
 
     if (difference > 0) {
         reqSciPerSys = reqSciPerSys + 1;
