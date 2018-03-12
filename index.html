@@ -12,6 +12,7 @@
   </p>
 
   <div id="d_sysSciReq">
+    <h2>Input</h2>
     <form id="f_sysSciReq">
       Enter your degree of <b>PACIFISM</b> (0-Not pacifist 1-pacifist 2-Fanatic pacifist): <br><input type="number" class="numInput" id="i_pacifist"><br>
       Enter the <b>AVERAGE BASE COST</b> of your current (or typical) research:            <br><input type="number" class="numInput" id="i_avgBaseCost"><br>
@@ -21,18 +22,26 @@
       Enter your BASE <b>PHYSICS</b>/month:                                                <br><input type="number" class="numInput" id="i_basePHY"><br>
       Enter your BASE <b>SOCIETY</b>/month:                                                <br><input type="number" class="numInput" id="i_baseSOC"><br>
       Enter your BASE <b>ENGINEERING</b>/month:                                            <br><input type="number" class="numInput" id="i_baseENG"><br>
-      <input id="submit" type="button" value="submit" onclick="sysSciReq()">
+      <input id="submit" type="button" value="submit" onclick="main()">
     </form>
-    <p id="result"><i>Result</i></p>
   </div>
-  <p id="output1"></p>
-  <p id="output2"></p>
-  <p id="output3"></p>
-  <p id="output4"></p>
-  <p id="output5"></p>
-  <p id="output6"></p>
-  <p id="output7"></p>
-  <p id="output8"></p>
+  <div id="d_results">
+    <h2>Results</h2>
+    <p id="reqSciPerSys">Required System Science: </p>
+    <p id="researchRate">Research Rate: </p>
+  </div>
+
+  <div id="d_DEBUG">
+    <h2>DEBUG</h2>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
+    <p id="output5"></p>
+    <p id="output6"></p>
+    <p id="output7"></p>
+    <p id="output8"></p>
+  </div>
 
 </body>
 

@@ -1,7 +1,13 @@
+// Constant values
+var systemCost = .02;
+var planetCost = .05;
+
+function main() {
+  sysSciReq();
+  researchRate();
+}
+
 function sysSciReq() {
-  // Constant values
-  var systemCost = .02;
-  var planetCost = .05;
 
   // Retrieve form values
   var pacifistMod = document.getElementById("i_pacifist").value;
@@ -15,6 +21,7 @@ function sysSciReq() {
   var baseSOC = document.getElementById("i_baseSOC").value;
   var baseENG = document.getElementById("i_baseENG").value;
 
+  // To integer (find a less stupid way to do this)
   basePHY = + basePHY;
   baseSOC = + baseSOC;
   baseENG = + baseENG;
@@ -71,22 +78,46 @@ function sysSciReq() {
 
     document.getElementById("output5").innerHTML = "full: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
 
-    document.getElementById("output6").innerHTML = "type of base: " + (typeof basePHY);
-
-    document.getElementById("output7").innerHTML = "type of base: " + (typeof newCost);
-
     difference = newCost - originalCost;
 
-    document.getElementById("output8").innerHTML = "diff " + difference;
+    document.getElementById("output6").innerHTML = "diff " + difference;
 
     if (difference > 0) {
-        reqSciPerSys = reqSciPerSys + 1;
+      reqSciPerSys = reqSciPerSys + 1;
     }
+  }
+  document.getElementById("reqSciPerSys").innerHTML = "Required System Science: " + reqSciPerSys;
 }
 
-document.getElementById("result").innerHTML = "New systems require a minimum of " + reqSciPerSys + " science to break even after tech penalty."
+function researchRate() {
+  var genSciMod = document.getElementById("i_genSciMod").value;
 
+  var sigSystems = document.getElementById("i_systemNum").value;
+  var sigPlanets = document.getElementById("i_planetNum").value;
 
+  var basePHY = document.getElementById("i_basePHY").value;
+  var baseSOC = document.getElementById("i_baseSOC").value;
+  var baseENG = document.getElementById("i_baseENG").value;
 
+  // To integer
+  basePHY = + basePHY;
+  baseSOC = + baseSOC;
+  baseENG = + baseENG;
+
+  genSciMod = 1 + (genSciMod * .01);
+
+  sigSystems = sigSystems - 1;
+  sigPlanets = sigPlanets - 1;
+
+  var penalty = 1 + ((planetCost * sigPlanets) +
+                     (systemCost * sigSystems));
+
+  document.getElementById("output7").innerHTML = "pen " + penalty;
+
+  var avgResearch = baseENG + basePHY + baseSOC;
+
+  var researchRate = 1/(penalty/(avgResearch * genSciMod));
+
+  document.getElementById("researchRate").innerHTML = "Research Rate: " + researchRate;
 
 }

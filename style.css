@@ -1,8 +1,35 @@
+body {
+  background-color: #464646;
+}
+
 div#d_sysSciReq {
     width: 40%;
+    display: inline-block;
     border-radius: 5px;
     background-color: gray;
     padding: 10px;
+    margin: 2.5%;
+    vertical-align: top;
+}
+
+div#d_results {
+    width: 40%;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: gray;
+    padding: 10px;
+    margin: 2.5%;
+    vertical-align: top;
+}
+
+div#d_DEBUG {
+  visibility: visible;
+  width: 40%;
+  border-radius: 5px;
+  background-color: gray;
+  padding: 10px;
+  margin: 2.5%;
+  vertical-align: top;
 }
 
 input.numInput {
