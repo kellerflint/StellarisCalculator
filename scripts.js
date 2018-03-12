@@ -7,6 +7,13 @@ function main() {
   researchRate();
 }
 
+/* Done in terms of GENERIC Science. Assumes equal distribution of each type in system.
+ * Doesn't mean improvement in science score, just in time to research (so one low aera will skew results)
+ * i.e. 1000 phy 1000 soc and 30 eng would only require 2 systems to break even. This makes your average research
+ * slower but since the algorithm assumes that each tech costs the same amount and a third of the science gained
+ * is of each type, gaining .66 society would drastically improve average research time. However if none of the
+ * science that you would gain is society, it isn't worth taking.
+ */
 function sysSciReq() {
 
   // Retrieve form values
@@ -68,14 +75,11 @@ function sysSciReq() {
 
     var newCost = avgTechCost * avgResearch;
 
+    // Test code
     document.getElementById("output1").innerHTML = "reqSciPerSys/3: " + ((reqSciPerSys/3));
-
     document.getElementById("output2").innerHTML = "basePHY: " + basePHY;
-
     document.getElementById("output3").innerHTML = "pacifistMod: " + pacifistMod;
-
     document.getElementById("output4").innerHTML = "genSciMod: " + genSciMod;
-
     document.getElementById("output5").innerHTML = "full: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
 
     difference = newCost - originalCost;
@@ -86,7 +90,7 @@ function sysSciReq() {
       reqSciPerSys = reqSciPerSys + 1;
     }
   }
-  document.getElementById("reqSciPerSys").innerHTML = "Required System Science: " + reqSciPerSys;
+  document.getElementById("reqSciPerSys").innerHTML = "Average System Science (to break even): " + reqSciPerSys;
 }
 
 function researchRate() {
@@ -118,6 +122,13 @@ function researchRate() {
 
   var researchRate = 1/(penalty/(avgResearch * genSciMod));
 
-  document.getElementById("researchRate").innerHTML = "Research Rate: " + researchRate;
+  var phyResearchRate = 1/(penalty/(basePHY*genSciMod));
+  var socResearchRate = 1/(penalty/(baseSOC*genSciMod));
+  var engResearchRate = 1/(penalty/(baseENG*genSciMod));
+
+  document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: " + Math.round(researchRate);
+  document.getElementById("phyResearchRate").innerHTML = "Physics Research Rate: " + Math.round(phyResearchRate);
+  document.getElementById("socResearchRate").innerHTML = "Society Research Rate: " + Math.round(socResearchRate);
+  document.getElementById("engResearchRate").innerHTML = "Engineering Research Rate: " + Math.round(engResearchRate);
 
 }
