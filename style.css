@@ -23,7 +23,7 @@ div#d_results {
 }
 
 div#d_DEBUG {
-  visibility: visible;
+  visibility: hidden;
   width: 40%;
   border-radius: 5px;
   background-color: gray;
