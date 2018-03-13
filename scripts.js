@@ -18,7 +18,7 @@ function sysSciReq() {
 
   // Retrieve form values
   var pacifistMod = document.getElementById("i_pacifist").value;
-  var avgBaseCost = document.getElementById("i_avgBaseCost").value;
+  var avgBaseCost = 1000;
   var genSciMod = document.getElementById("i_genSciMod").value;
 
   var sigSystems = document.getElementById("i_systemNum").value;
