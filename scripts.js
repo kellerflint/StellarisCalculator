@@ -127,9 +127,9 @@ function researchRate() {
   var engResearchRate = 1/(penalty/(baseENG*genSciMod));
 
   document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: " + Math.round(researchRate);
-  document.getElementById("phyResearchRate").innerHTML = "Physics Research Rate: " + Math.round(phyResearchRate);
-  document.getElementById("socResearchRate").innerHTML = "Society Research Rate: " + Math.round(socResearchRate);
-  document.getElementById("engResearchRate").innerHTML = "Engineering Research Rate: " + Math.round(engResearchRate);
+  document.getElementById("phyResearchRate").innerHTML = "Physics Rate: " + Math.round(phyResearchRate);
+  document.getElementById("socResearchRate").innerHTML = "Society Rate: " + Math.round(socResearchRate);
+  document.getElementById("engResearchRate").innerHTML = "Engineering Rate: " + Math.round(engResearchRate);
 
 }
 
