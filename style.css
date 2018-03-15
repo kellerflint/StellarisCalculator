@@ -61,7 +61,7 @@ div#d_addSystem {
 div#d_removeSystem {
   margin-top: 10px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #B70101;
   padding: 10px;
 }
 
@@ -95,7 +95,7 @@ input.numInput {
     box-sizing: border-box;
 }
 
-input#submit {
+input.submit {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -105,6 +105,14 @@ input#submit {
     box-sizing: border-box;
 }
 
-input#submit:hover {
+input.submit:hover {
   border-color: blue;
+}
+
+input#clearAll {
+    width: 45%;
+}
+
+input#clearGains {
+    width: 45%;
 }

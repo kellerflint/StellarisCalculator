@@ -22,7 +22,7 @@
       BASE <b>PHYSICS</b>/month:                                                <br><input type="number" class="numInput" id="i_basePHY"><br>
       BASE <b>SOCIETY</b>/month:                                                <br><input type="number" class="numInput" id="i_baseSOC"><br>
       BASE <b>ENGINEERING</b>/month:                                            <br><input type="number" class="numInput" id="i_baseENG"><br>
-      <input id="submit" type="button" value="Submit" onclick="main()">
+      <input class="submit" type="button" value="Submit" onclick="main()">
     </form>
   </div>
 
@@ -33,7 +33,7 @@
           System <b>PHYSICS</b>:                                                <br><input type="number" class="numInput" id="i_addPHY" value=0><br>
           System <b>SOCIETY</b>:                                                <br><input type="number" class="numInput" id="i_addSOC" value=0><br>
           System <b>ENGINEERING</b>:                                            <br><input type="number" class="numInput" id="i_addENG" value=0><br>
-          <input id="submit" type="button" value="Add System" onclick="addSystem()">
+          <input class="submit" type="button" value="Add System" onclick="addSystem()">
         </form>
       </div>
       <div id="d_removeSystem">
@@ -42,7 +42,7 @@
           System <b>PHYSICS</b>:                                                <br><input type="number" class="numInput" id="i_removePHY" value=0><br>
           System <b>SOCIETY</b>:                                                <br><input type="number" class="numInput" id="i_removeSOC" value=0><br>
           System <b>ENGINEERING</b>:                                            <br><input type="number" class="numInput" id="i_removeENG" value=0><br>
-          <input id="submit" type="button" value="Remove System" onclick="removeSystem()">
+          <input class="submit" type="button" value="Remove System" onclick="removeSystem()">
         </form>
       </div>
   </div>
@@ -51,10 +51,10 @@
     <h2>Results</h2>
     <p id="reqSciPerSys">Average System Science (to break even): </p>
     <p class="inline" id="avgResearchRate">Average Research Rate: </p><p class="inline" id="averageGain"></p><br>
-    <p class="inline" id="phyResearchRate">Physics Rate: </p><p class="inline" id="physicsGain"></p><br>
-    <p class="inline" id="socResearchRate">Society Rate: </p><p class="inline" id="societyGain"></p><br>
-    <p class="inline" id="engResearchRate">Engineering Rate: </p><p class="inline" id="engineeringGain"></p><br>
-    <input id="submit" type="button" value="Clear Results" onclick="clearAll()">
+    <p class="inline" id="phyResearchRate">&ensp; &ensp; Physics Rate: </p><p class="inline" id="physicsGain"></p><br>
+    <p class="inline" id="socResearchRate">&ensp; &ensp; Society Rate: </p><p class="inline" id="societyGain"></p><br>
+    <p class="inline" id="engResearchRate">&ensp; &ensp; Engineering Rate: </p><p class="inline" id="engineeringGain"></p><br>
+    <input class="submit" id="clearAll" type="button" value="Clear All" onclick="clearAll()"> <input class="submit" id="clearGains" type="button" value="Clear Gains" onclick="clearGains()">
   </div>
 
   <div id="d_DEBUG">
