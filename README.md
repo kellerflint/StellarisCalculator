@@ -1,6 +1,6 @@
-# StellarisCalculator
+# Stellaris Science Calculator
 
-StellarisCalculator is hosted at https://kellerflint.github.io/StellarisCalculator/
+The Stellaris Science Calculator is hosted at https://kellerflint.github.io/StellarisCalculator/
 
 The Problem
 
