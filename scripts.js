@@ -5,6 +5,27 @@ var planetCost = .05;
 function main() {
   sysSciReq();
   displayResearchRate();
+  clearGains();
+}
+
+function clearGains() {
+  document.getElementById("averageGain").innerHTML = "";
+  document.getElementById("physicsGain").innerHTML = "";
+  document.getElementById("societyGain").innerHTML = "";
+  document.getElementById("engineeringGain").innerHTML = "";
+}
+
+function clearAll() {
+  document.getElementById("averageGain").innerHTML = "";
+  document.getElementById("physicsGain").innerHTML = "";
+  document.getElementById("societyGain").innerHTML = "";
+  document.getElementById("engineeringGain").innerHTML = "";
+
+  document.getElementById("reqSciPerSys").innerHTML = "";
+  document.getElementById("avgResearchRate").innerHTML = "";
+  document.getElementById("phyResearchRate").innerHTML = "";
+  document.getElementById("socResearchRate").innerHTML = "";
+  document.getElementById("engResearchRate").innerHTML = "";
 }
 
 /* Done in terms of GENERIC Science. Assumes equal distribution of each type in system.
