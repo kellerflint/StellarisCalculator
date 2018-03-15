@@ -132,3 +132,7 @@ function researchRate() {
   document.getElementById("engResearchRate").innerHTML = "Engineering Research Rate: " + Math.round(engResearchRate);
 
 }
+
+function addSystem() {
+  //TODO
+}

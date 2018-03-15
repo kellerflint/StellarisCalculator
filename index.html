@@ -12,7 +12,7 @@
   </p>
 
   <div id="d_sysSciReq">
-    <h2>Input</h2>
+    <h2>Basic</h2>
     <form id="f_sysSciReq">
       Degree of <b>PACIFISM</b> (0-None 1-Pacifist 2-Fanatic): <br><input type="number" class="numInput" id="i_pacifist"><br>
       GENERIC <b>SCIENCE MODIFIER</b> (as integer):                       <br><input type="number" class="numInput" id="i_genSciMod"><br><br>
@@ -21,9 +21,30 @@
       BASE <b>PHYSICS</b>/month:                                                <br><input type="number" class="numInput" id="i_basePHY"><br>
       BASE <b>SOCIETY</b>/month:                                                <br><input type="number" class="numInput" id="i_baseSOC"><br>
       BASE <b>ENGINEERING</b>/month:                                            <br><input type="number" class="numInput" id="i_baseENG"><br>
-      <input id="submit" type="button" value="submit" onclick="main()">
+      <input id="submit" type="button" value="Submit" onclick="main()">
     </form>
   </div>
+    <div id="arContainer">
+    <div id="d_addSystem">
+      <h2>Add a System</h2>
+      <form id="f_addSystem">
+        System <b>PHYSICS</b>:                                                <br><input type="number" class="numInput" id="i_addPHY"><br>
+        System <b>SOCIETY</b>:                                                <br><input type="number" class="numInput" id="i_addSOC"><br>
+        System <b>ENGINEERING</b>:                                            <br><input type="number" class="numInput" id="i_addENG"><br>
+        <input id="submit" type="button" value="Add System" onclick="addSystem()">
+      </form>
+    </div>
+    <div id="d_removeSystem">
+      <h2>Remove a System</h2>
+      <form id="f_removeSystem">
+        System <b>PHYSICS</b>:                                                <br><input type="number" class="numInput" id="i_removePHY"><br>
+        System <b>SOCIETY</b>:                                                <br><input type="number" class="numInput" id="i_removeSOC"><br>
+        System <b>ENGINEERING</b>:                                            <br><input type="number" class="numInput" id="i_removeENG"><br>
+        <input id="submit" type="button" value="Remove System" onclick="addSystem()">
+      </form>
+    </div>
+  </div>
+
   <div id="d_results">
     <h2>Results</h2>
     <p id="reqSciPerSys">Average System Science (to break even): </p>

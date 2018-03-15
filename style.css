@@ -3,7 +3,7 @@ body {
 }
 
 div#d_sysSciReq {
-    width: 40%;
+    width: 30%;
     display: inline-block;
     border-radius: 5px;
     background-color: gray;
@@ -12,8 +12,31 @@ div#d_sysSciReq {
     vertical-align: top;
 }
 
+div#arContainer {
+  width: 20%;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 2.5%;
+  vertical-align: top;
+}
+
+div#d_addSystem {
+  border-radius: 5px;
+  background-color: green;
+  padding: 10px;
+}
+
+div#d_removeSystem {
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: red;
+  padding: 10px;
+}
+
 div#d_results {
-    width: 40%;
+    width: 30%;
     display: inline-block;
     border-radius: 5px;
     background-color: gray;
@@ -24,7 +47,7 @@ div#d_results {
 
 div#d_DEBUG {
   visibility: hidden;
-  width: 40%;
+  width: 90%;
   border-radius: 5px;
   background-color: gray;
   padding: 10px;
@@ -53,5 +76,5 @@ input#submit {
 }
 
 input#submit:hover {
-  border-color: green;
+  border-color: blue;
 }
