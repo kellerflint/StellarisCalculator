@@ -2,6 +2,10 @@ body {
   background-color: white;
 }
 
+p.inline {
+  display: inline;
+}
+
 div#d_sysSciReq {
     width: 30%;
     display: inline-block;
@@ -48,7 +52,7 @@ div#d_results {
 }
 
 div#d_DEBUG {
-  visibility: hidden;
+  visibility: visible;
   width: 90%;
   border-radius: 5px;
   background-color: gray;

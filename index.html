@@ -37,7 +37,7 @@
           System <b>PHYSICS</b>:                                                <br><input type="number" class="numInput" id="i_removePHY" value=0><br>
           System <b>SOCIETY</b>:                                                <br><input type="number" class="numInput" id="i_removeSOC" value=0><br>
           System <b>ENGINEERING</b>:                                            <br><input type="number" class="numInput" id="i_removeENG" value=0><br>
-          <input id="submit" type="button" value="Remove System" onclick="addSystem()">
+          <input id="submit" type="button" value="Remove System" onclick="removeSystem()">
         </form>
       </div>
   </div>
@@ -45,10 +45,10 @@
   <div id="d_results">
     <h2>Results</h2>
     <p id="reqSciPerSys">Average System Science (to break even): </p>
-    <p id="avgResearchRate">Average Research Rate: </p>
-    <p id="phyResearchRate" style="text-indent: 5em;">Physics Rate: </p>
-    <p id="socResearchRate" style="text-indent: 5em;">Society Rate: </p>
-    <p id="engResearchRate" style="text-indent: 5em;">Engineering Rate: </p>
+    <p class="inline" id="avgResearchRate">Average Research Rate: </p><p class="inline" id="averageGain"></p><br>
+    <p class="inline" id="phyResearchRate">Physics Rate: </p><p class="inline" id="physicsGain"></p><br>
+    <p class="inline" id="socResearchRate">Society Rate: </p><p class="inline" id="societyGain"></p><br>
+    <p class="inline" id="engResearchRate">Engineering Rate: </p><p class="inline" id="engineeringGain"></p><br>
 
   </div>
 
