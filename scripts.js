@@ -167,6 +167,10 @@ function researchRate(physics, society, engineering, isChange) {
 
 function addSystem() {
 
+  document.getElementById("i_removePHY").value = 0;
+  document.getElementById("i_removeSOC").value = 0;
+  document.getElementById("i_removeENG").value = 0;
+
   var pacifistMod = parseFloat(document.getElementById("i_pacifist").value);
 
   pacifistMod = 1 + (pacifistMod * .05);
@@ -229,6 +233,10 @@ function addSystem() {
 }
 
 function removeSystem() {
+
+  document.getElementById("i_addPHY").value = 0;
+  document.getElementById("i_addSOC").value = 0;
+  document.getElementById("i_addENG").value = 0;
 
   var pacifistMod = parseFloat(document.getElementById("i_pacifist").value);
 
