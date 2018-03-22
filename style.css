@@ -1,6 +1,14 @@
+/* General */
+
 body {
   background-color: white;
 }
+
+p.inline {
+  display: inline;
+}
+
+/* Menu */
 
 ul.menu {
     list-style-type: none;
@@ -26,9 +34,17 @@ li a:hover {
     background-color: #111;
 }
 
-p.inline {
-  display: inline;
+/* Tutorial */
+
+div.tutorialBlock {
+  display: inline-block;
 }
+
+div.tutorialBlock img {
+  float: right;
+}
+
+/* Calculator */
 
 div#d_sysSciReq {
     width: 30%;
@@ -76,7 +92,7 @@ div#d_results {
 }
 
 div#d_DEBUG {
-  visibility: visible;
+  visibility: hidden;
   width: 90%;
   border-radius: 5px;
   background-color: gray;

@@ -297,6 +297,4 @@ function removeSystem() {
     document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
   }
 
-
-
 }
