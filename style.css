@@ -37,11 +37,19 @@ li a:hover {
 /* Tutorial */
 
 div.tutorialBlock {
+  align-items: center;
+  width: 90%;
   display: inline-block;
+  border-radius: 5px;
+  background-color: grey;
+  padding: 14px 16px;
+  margin: 1%;
 }
 
 div.tutorialBlock img {
+  margin-left: 20px;
   float: right;
+  width: 50%;
 }
 
 /* Calculator */
