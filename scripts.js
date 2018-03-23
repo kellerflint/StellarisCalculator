@@ -8,6 +8,19 @@ function main() {
   clearGains();
 }
 
+function dropdown() {
+  document.getElementById("myDropdown").classList.toggle("show"); // TODO FIX THIS
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+
 function clearGains() {
   document.getElementById("averageGain").innerHTML = "";
   document.getElementById("physicsGain").innerHTML = "";

@@ -10,7 +10,7 @@ p.inline {
 
 /* Menu */
 
-ul.menu {
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -18,11 +18,8 @@ ul.menu {
     background-color: #333;
 }
 
-li.menu {
+.menu a {
     float: left;
-}
-
-li a {
     display: block;
     color: white;
     text-align: center;
@@ -30,7 +27,45 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    float: left;
+    font-size: 16px;
+    border: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+.show {
+    display: block;
+}
+
+.menu a:hover, .dropbtn:hover {
     background-color: #111;
 }
 

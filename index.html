@@ -7,11 +7,20 @@
   <title>Stellaris Calculator</title>
 </head>
 <body>
-  <ul class="menu">
-    <li class="menu"><a href="index.html">Calculator</a></li>
-    <li class="menu"><a href="tutorial.html">Tutorial</a></li>
-    <li class="menu"><a href="https://github.com/kellerflint/StellarisCalculator">GitHub</a></li>
-  </ul>
+  <div class="menu">
+    <a href="index.html">Calculator</a>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="dropdown()">Tutorial
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="tutorial_info.html">Information</a>
+      <a href="#">Add/Remove</a>
+      <a href="#">Results</a>
+    </div>
+  </div>
+    <a href="https://github.com/kellerflint/StellarisCalculator">GitHub</a>
+  </div>
   <div id="d_sysSciReq">
     <h2>Information</h2>
     <form id="f_sysSciReq">
