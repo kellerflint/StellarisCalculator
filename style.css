@@ -8,6 +8,10 @@ p.inline {
   display: inline;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* Menu */
 
 .menu {
