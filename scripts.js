@@ -9,7 +9,7 @@ function main() {
 }
 
 function dropdown() {
-  document.getElementById("myDropdown").classList.toggle("show"); // TODO FIX THIS
+  document.getElementById("myDropdown").classList.toggle("show");
 }
 
 window.onclick = function(e) {
@@ -41,13 +41,6 @@ function clearAll() {
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: ";
 }
 
-/* Done in terms of GENERIC Science. Assumes equal distribution of each type in system.
- * Doesn't mean improvement in science score, just in time to research (so one low aera will skew results)
- * i.e. 1000 phy 1000 soc and 30 eng would only require 2 systems to break even. This makes your average research
- * slower but since the algorithm assumes that each tech costs the same amount and a third of the science gained
- * is of each type, gaining .66 society would drastically improve average research time. However if none of the
- * science that you would gain is society, it isn't worth taking.
- */
 function sysSciReq() {
 
   // Retrieve form values
@@ -311,5 +304,3 @@ function removeSystem() {
   }
 
 }
-
-// Testcomment

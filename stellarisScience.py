@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# This is the original much worse version of this project I did in python
+
 # pre: does NOT include stored science in monthly progress
 import sys
 
