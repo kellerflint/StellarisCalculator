@@ -91,6 +91,12 @@ div.tutorialBlock img {
   width: 50%;
 }
 
+div.tutorialBlock img.smallImg {
+  margin-left: 20px;
+  float: right;
+  width: 35%;
+}
+
 /* Calculator */
 
 div#d_sysSciReq {
