@@ -34,7 +34,7 @@ function clearAll() {
   document.getElementById("societyGain").innerHTML = "";
   document.getElementById("engineeringGain").innerHTML = "";
 
-  document.getElementById("reqSciPerSys").innerHTML = "Average System Science (to break even): ";
+  document.getElementById("reqSciPerSys").innerHTML = "Average System Science: ";
   document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: ";
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: ";
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: ";
@@ -104,10 +104,10 @@ function sysSciReq() {
 
     // Test code
     document.getElementById("output1").innerHTML = "reqSciPerSys/3: " + ((reqSciPerSys/3));
-    document.getElementById("output2").innerHTML = "basePHY: " + basePHY;
-    document.getElementById("output3").innerHTML = "pacifistMod: " + pacifistMod;
-    document.getElementById("output4").innerHTML = "genSciMod: " + genSciMod;
-    document.getElementById("output5").innerHTML = "full: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
+    document.getElementById("output2").innerHTML = "oldcost: " + originalCost;
+    document.getElementById("output3").innerHTML = "newcost: " + newCost;
+    document.getElementById("output4").innerHTML = "penalty: " + penalty;
+    document.getElementById("output5").innerHTML = "final physics: " + ((basePHY + ((reqSciPerSys/3) * pacifistMod))*genSciMod);
 
     difference = newCost - originalCost;
 
@@ -117,7 +117,7 @@ function sysSciReq() {
       reqSciPerSys = reqSciPerSys + 1;
     }
   }
-  document.getElementById("reqSciPerSys").innerHTML = "Average System Science (to break even): " + reqSciPerSys;
+  document.getElementById("reqSciPerSys").innerHTML = "Average System Science: " + reqSciPerSys;
 }
 
 function displayResearchRate() {
