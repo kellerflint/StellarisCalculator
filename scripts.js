@@ -82,6 +82,10 @@ function displayResearchRate() {
   var society = document.getElementById("i_baseSOC").value;
   var engineering = document.getElementById("i_baseENG").value;
 
+  var physics = + physics;
+  var society = + society;
+  var engineering = + engineering;
+
   rates = researchRate(physics, society, engineering, 0);
 
   document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: " + (Math.round(rates[0] * 10)/10);
@@ -90,40 +94,25 @@ function displayResearchRate() {
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: " + (Math.round(rates[3] * 10)/10);
 }
 
-// isChange = x where x is number of added systems, 0 for no change calculation and -x for removing a system
-// physics, society and engineering are the total values not just the base values
-function researchRate(physics, society, engineering, isChange) {
-  var genSciMod = document.getElementById("i_genSciMod").value;
+// change = x where x is number of added systems, 0 for no change calculation and -x for removing a system
+// physics, society and engineering are add/remove values (if any)
+function researchRate(physics, society, engineering, change) {
 
-  var sigSystems = document.getElementById("i_systemNum").value;
-  var sigPlanets = document.getElementById("i_planetNum").value;
-
-  var basePHY = physics;
-  var baseSOC = society;
-  var baseENG = engineering;
-
-  // To integer
-  basePHY = + basePHY;
-  baseSOC = + baseSOC;
-  baseENG = + baseENG;
-
-  genSciMod = 1 + (genSciMod * .01);
-
-  sigSystems = sigSystems - 1 + isChange;
-  sigPlanets = sigPlanets - 1;
+  var rateSystems = sigSystems + change;
 
   var penalty = 1 + ((planetCost * sigPlanets) +
-                     (systemCost * sigSystems));
+                     (systemCost * rateSystems));
 
   document.getElementById("output7").innerHTML = "pen " + penalty;
 
-  var avgResearch = baseENG + basePHY + baseSOC;
+  var avgResearch = (basePHY + baseSOC + baseENG) +
+                    (physics + society + engineering);
 
   var researchRate = 1/(penalty/(avgResearch * genSciMod));
 
-  var phyResearchRate = 1/(penalty/(basePHY*genSciMod));
-  var socResearchRate = 1/(penalty/(baseSOC*genSciMod));
-  var engResearchRate = 1/(penalty/(baseENG*genSciMod));
+  var phyResearchRate = 1/(penalty/((basePHY+physics)*genSciMod));
+  var socResearchRate = 1/(penalty/((baseSOC+society)*genSciMod));
+  var engResearchRate = 1/(penalty/((baseENG+engineering)*genSciMod));
 
   return [researchRate, phyResearchRate, socResearchRate, engResearchRate];
 
@@ -131,28 +120,20 @@ function researchRate(physics, society, engineering, isChange) {
 
 function addSystem() {
 
+  // Zeros out values from removal to avoid unclear results
   document.getElementById("i_removePHY").value = 0;
   document.getElementById("i_removeSOC").value = 0;
   document.getElementById("i_removeENG").value = 0;
 
-  var pacifistMod = parseFloat(document.getElementById("i_pacifist").value);
+  var originalRates = researchRate(0, 0, 0, 0);
 
-  pacifistMod = 1 + (pacifistMod * .05);
-
-  var physics = document.getElementById("i_basePHY").value;
-  var society = document.getElementById("i_baseSOC").value;
-  var engineering = document.getElementById("i_baseENG").value;
-
-  var originalRates = researchRate(physics, society, engineering, 0);
-  document.getElementById("output5").innerHTML = "originalRates " + originalRates;
-
-
-  physics = (parseFloat(document.getElementById("i_addPHY").value) * pacifistMod) + parseFloat(document.getElementById("i_basePHY").value);
-  society = (parseFloat(document.getElementById("i_addSOC").value) * pacifistMod) + parseFloat(document.getElementById("i_baseSOC").value);
-  engineering = (parseFloat(document.getElementById("i_addENG").value) * pacifistMod) + parseFloat(document.getElementById("i_baseENG").value);
+  var physics = parseFloat(document.getElementById("i_addPHY").value) * pacifistMod;
+  var society = parseFloat(document.getElementById("i_addSOC").value) * pacifistMod;
+  var engineering = parseFloat(document.getElementById("i_addENG").value) * pacifistMod;
 
   var newRates = researchRate(physics, society, engineering, 1);
-  document.getElementById("output7").innerHTML = "newRates " + newRates;
+
+  // Colored Display
 
   var difference = newRates[0] - originalRates[0];
   if (difference > 0) {
@@ -198,28 +179,20 @@ function addSystem() {
 
 function removeSystem() {
 
+  // Zeros out values from addition to avoid unclear results
   document.getElementById("i_addPHY").value = 0;
   document.getElementById("i_addSOC").value = 0;
   document.getElementById("i_addENG").value = 0;
 
-  var pacifistMod = parseFloat(document.getElementById("i_pacifist").value);
+  var originalRates = researchRate(0, 0, 0, 0);
 
-  pacifistMod = 1 + (pacifistMod * .05);
-
-  var physics = document.getElementById("i_basePHY").value;
-  var society = document.getElementById("i_baseSOC").value;
-  var engineering = document.getElementById("i_baseENG").value;
-
-  var originalRates = researchRate(physics, society, engineering, 0);
-  document.getElementById("output5").innerHTML = "originalRates " + originalRates;
-
-
-  physics = parseFloat(document.getElementById("i_basePHY").value) - (parseFloat(document.getElementById("i_removePHY").value) * pacifistMod);
-  society = parseFloat(document.getElementById("i_baseSOC").value) - (parseFloat(document.getElementById("i_removeSOC").value) * pacifistMod);
-  engineering = parseFloat(document.getElementById("i_baseENG").value) - (parseFloat(document.getElementById("i_removeENG").value) * pacifistMod);
+  var physics = parseFloat(document.getElementById("i_basePHY").value);
+  var society = parseFloat(document.getElementById("i_baseSOC").value);
+  var engineering = parseFloat(document.getElementById("i_baseENG").value);
 
   var newRates = researchRate(physics, society, engineering, -1);
-  document.getElementById("output7").innerHTML = "newRates " + newRates;
+
+  // Colored Display
 
   var difference = newRates[0] - originalRates[0];
   if (difference > 0) {

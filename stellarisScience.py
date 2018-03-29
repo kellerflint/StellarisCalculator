@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# This is the original much worse version of this project I did in python
+# This is the original (and very incomplete) version of this project that I did in python. Not part of the web project.
 
 # pre: does NOT include stored science in monthly progress
 import sys
