@@ -81,7 +81,7 @@ function displayResearchRate() {
 
   rates = researchRate(0, 0, 0, 0);
 
-  document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: " + (Math.round(rates[0] * 10)/10);
+  document.getElementById("avgResearchRate").innerHTML = "Combined Research Rates: " + (Math.round(rates[0] * 10)/10);
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: " + (Math.round(rates[1] * 10)/10);
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: " + (Math.round(rates[2] * 10)/10);
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: " + (Math.round(rates[3] * 10)/10);
@@ -177,9 +177,9 @@ function removeSystem() {
 
   var originalRates = researchRate(0, 0, 0, 0);
 
-  var physics = parseFloat(document.getElementById("i_basePHY").value);
-  var society = parseFloat(document.getElementById("i_baseSOC").value);
-  var engineering = parseFloat(document.getElementById("i_baseENG").value);
+  var physics = -1 * (parseFloat(document.getElementById("i_removePHY").value) * pacifistMod);
+  var society = -1 * (parseFloat(document.getElementById("i_removeSOC").value) * pacifistMod);
+  var engineering = -1 * (parseFloat(document.getElementById("i_removeENG").value) * pacifistMod);
 
   var newRates = researchRate(physics, society, engineering, -1);
 
@@ -243,7 +243,7 @@ function clearAll() {
   document.getElementById("engineeringGain").innerHTML = "";
 
   document.getElementById("reqSciPerSys").innerHTML = "Minimum System Science: ";
-  document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: ";
+  document.getElementById("avgResearchRate").innerHTML = "Combined Research Rates: ";
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: ";
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: ";
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: ";
