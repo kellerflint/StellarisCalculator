@@ -74,7 +74,7 @@ function sysSciReq() {
       reqSciPerSys = reqSciPerSys + 1;
     }
   }
-  document.getElementById("reqSciPerSys").innerHTML = "Average System Science: " + reqSciPerSys;
+  document.getElementById("reqSciPerSys").innerHTML = "Minimum System Science: " + reqSciPerSys;
 }
 
 function displayResearchRate() {
@@ -242,7 +242,7 @@ function clearAll() {
   document.getElementById("societyGain").innerHTML = "";
   document.getElementById("engineeringGain").innerHTML = "";
 
-  document.getElementById("reqSciPerSys").innerHTML = "Average System Science: ";
+  document.getElementById("reqSciPerSys").innerHTML = "Minimum System Science: ";
   document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: ";
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: ";
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: ";
