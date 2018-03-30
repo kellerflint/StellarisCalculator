@@ -78,15 +78,8 @@ function sysSciReq() {
 }
 
 function displayResearchRate() {
-  var physics = document.getElementById("i_basePHY").value;
-  var society = document.getElementById("i_baseSOC").value;
-  var engineering = document.getElementById("i_baseENG").value;
 
-  var physics = + physics;
-  var society = + society;
-  var engineering = + engineering;
-
-  rates = researchRate(physics, society, engineering, 0);
+  rates = researchRate(0, 0, 0, 0);
 
   document.getElementById("avgResearchRate").innerHTML = "Average Research Rate: " + (Math.round(rates[0] * 10)/10);
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: " + (Math.round(rates[1] * 10)/10);
