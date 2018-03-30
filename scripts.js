@@ -7,12 +7,12 @@ var pacifistMod = 0;
 
 var genSciMod = 0;
 
-var basePHY = 0;
-var basePHY = 0;
-var basePHY = 0;
+var basePHY = 5;
+var basePHY = 5;
+var basePHY = 5;
 
-var sigSystems = 0;
-var sigPlanets = 0;
+var sigSystems = 1;
+var sigPlanets = 1;
 
 function main() {
   update();
@@ -58,12 +58,12 @@ function sysSciReq() {
   // Calcuations
   while (difference > 0) {
 
-    var originalRates = researchRate(physics, society, engineering, 0);
+    var originalRates = researchRate(0, 0, 0, 0);
     document.getElementById("output5").innerHTML = "originalRates " + originalRates;
 
-    var physics = (parseFloat(document.getElementById("i_addPHY").value) * pacifistMod) + parseFloat(document.getElementById("i_basePHY").value);
-    var society = (parseFloat(document.getElementById("i_addSOC").value) * pacifistMod) + parseFloat(document.getElementById("i_baseSOC").value);
-    var engineering = (parseFloat(document.getElementById("i_addENG").value) * pacifistMod) + parseFloat(document.getElementById("i_baseENG").value);
+    var physics = (1/3) * reqSciPerSys;
+    var society = (1/3) * reqSciPerSys;
+    var engineering = (1/3) * reqSciPerSys;
 
 
     var newRates = researchRate(physics, society, engineering, 1);
@@ -102,8 +102,6 @@ function researchRate(physics, society, engineering, change) {
 
   var penalty = 1 + ((planetCost * sigPlanets) +
                      (systemCost * rateSystems));
-
-  document.getElementById("output7").innerHTML = "pen " + penalty;
 
   var avgResearch = (basePHY + baseSOC + baseENG) +
                     (physics + society + engineering);
