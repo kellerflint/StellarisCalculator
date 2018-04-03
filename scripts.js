@@ -77,17 +77,17 @@ function sysSciReq() {
       reqSciPerSys = reqSciPerSys + 1;
     }
   }
-  document.getElementById("reqSciPerSys").innerHTML = "Minimum System Science: " + reqSciPerSys;
+  document.getElementById("reqSciPerSys").innerHTML = "<b>Minimum System Science:</b> " + reqSciPerSys;
 }
 
 function displayResearchRate() {
 
   var rates = researchRate(0, 0, 0, 0);
 
-  document.getElementById("avgResearchRate").innerHTML = "Combined Research Rates: " + (Math.round(rates[0] * 10)/10);
-  document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: " + (Math.round(rates[1] * 10)/10);
-  document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: " + (Math.round(rates[2] * 10)/10);
-  document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: " + (Math.round(rates[3] * 10)/10);
+  document.getElementById("avgResearchRate").innerHTML = "<b>Research Rate:</b> " + (Math.round(rates[0] * 10)/10);
+  document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics: " + (Math.round(rates[1] * 10)/10);
+  document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society: " + (Math.round(rates[2] * 10)/10);
+  document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering: " + (Math.round(rates[3] * 10)/10);
 }
 
 function displayResearchTimes() {
