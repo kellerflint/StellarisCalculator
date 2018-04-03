@@ -2,6 +2,8 @@
 var systemCost = .02;
 var planetCost = .05;
 
+var tierFiveBaseCost = 20000;
+
 // Globals
 var pacifistMod = 0;
 
@@ -18,6 +20,7 @@ function main() {
   update();
   sysSciReq();
   displayResearchRate();
+  displayResearchTimes();
   clearGains();
 }
 
@@ -79,12 +82,20 @@ function sysSciReq() {
 
 function displayResearchRate() {
 
-  rates = researchRate(0, 0, 0, 0);
+  var rates = researchRate(0, 0, 0, 0);
 
   document.getElementById("avgResearchRate").innerHTML = "Combined Research Rates: " + (Math.round(rates[0] * 10)/10);
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: " + (Math.round(rates[1] * 10)/10);
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: " + (Math.round(rates[2] * 10)/10);
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: " + (Math.round(rates[3] * 10)/10);
+}
+
+function displayResearchTimes() {
+  var times = researchTimes(0, 0, 0, 0);
+
+  document.getElementById("phyResearchTime").innerHTML = "&ensp; &ensp; Physics (months): " + (Math.round(times[0] * 10)/10);
+  document.getElementById("socResearchTime").innerHTML = "&ensp; &ensp; Society (months): " + (Math.round(times[1] * 10)/10);
+  document.getElementById("engResearchTime").innerHTML = "&ensp; &ensp; Engineering (months): " + (Math.round(times[2] * 10)/10);
 }
 
 // change = x where x is number of added systems, 0 for no change calculation and -x for removing a system
@@ -106,6 +117,27 @@ function researchRate(physics, society, engineering, change) {
   var engResearchRate = 1/(penalty/((baseENG+engineering)*genSciMod));
 
   return [researchRate, phyResearchRate, socResearchRate, engResearchRate];
+
+}
+
+// Returns research times for 5th tier technologies for each category
+function researchTimes(physics, society, engineering, change) {
+
+  var rateSystems = sigSystems + change;
+
+  var penalty = 1 + (rateSystems * systemCost) + (sigPlanets * planetCost);
+
+  var totalCost = tierFiveBaseCost * penalty;
+
+  var totalPhysics = (basePHY + physics) * genSciMod;
+  var totalSociety = (baseSOC + society) * genSciMod;
+  var totalEngineering = (baseENG + engineering) * genSciMod;
+
+  var physicsMonths = totalCost/totalPhysics;
+  var societyMonths = totalCost/totalSociety;
+  var engineeringMonths = totalCost/totalEngineering;
+
+  return [physicsMonths, societyMonths, engineeringMonths];
 
 }
 
@@ -247,6 +279,10 @@ function clearAll() {
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics Rate: ";
   document.getElementById("socResearchRate").innerHTML = "&ensp; &ensp; Society Rate: ";
   document.getElementById("engResearchRate").innerHTML = "&ensp; &ensp; Engineering Rate: ";
+
+  document.getElementById("phyResearchTime").innerHTML = "&ensp; &ensp; Physics (months): ";
+  document.getElementById("socResearchTime").innerHTML = "&ensp; &ensp; Society (months): ";
+  document.getElementById("engResearchTime").innerHTML = "&ensp; &ensp; Engineering (months): ";
 }
 
 // Dropdown actions
