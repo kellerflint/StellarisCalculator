@@ -82,7 +82,9 @@ div.tutorialBlock {
   border-radius: 5px;
   background-color: #d1d1d1;
   padding: 14px 16px;
-  margin: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 4%;
 }
 
 div.tutorialBlock img {
@@ -95,6 +97,10 @@ div.tutorialBlock img.smallImg {
   margin-left: 20px;
   float: right;
   width: 35%;
+}
+
+div.tutorialBlock li.longText {
+  width: 60%
 }
 
 /* Calculator */
