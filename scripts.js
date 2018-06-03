@@ -1,5 +1,5 @@
 // Constant values
-var systemCost = .02;
+var systemCost = .01;
 var planetCost = .05;
 
 var tierFiveBaseCost = 20000;
@@ -62,7 +62,7 @@ function sysSciReq() {
   while (difference > 0) {
 
     var originalRates = researchRate(0, 0, 0, 0);
-    document.getElementById("output5").innerHTML = "originalRates " + originalRates;
+    //document.getElementById("output5").innerHTML = "originalRates " + originalRates;
 
     var physics = (1/3) * reqSciPerSys;
     var society = (1/3) * reqSciPerSys;
@@ -128,6 +128,12 @@ function researchTimes(physics, society, engineering, change) {
   var penalty = 1 + (rateSystems * systemCost) + (sigPlanets * planetCost);
 
   var totalCost = tierFiveBaseCost * penalty;
+
+  document.getElementById("output1").innerHTML = totalCost;
+  document.getElementById("output2").innerHTML = tierFiveBaseCost;
+  document.getElementById("output3").innerHTML = penalty;
+  document.getElementById("output4").innerHTML = sigSystems;
+  document.getElementById("output5").innerHTML = change;
 
   var totalPhysics = (basePHY + physics) * genSciMod;
   var totalSociety = (baseSOC + society) * genSciMod;

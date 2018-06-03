@@ -151,7 +151,7 @@ div#d_results {
 }
 
 div#d_DEBUG {
-  visibility: hidden;
+  visibility: visible;
   width: 90%;
   border-radius: 5px;
   background-color: gray;
