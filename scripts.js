@@ -62,7 +62,7 @@ function sysSciReq() {
   while (difference > 0) {
 
     var originalRates = researchRate(0, 0, 0, 0);
-    //document.getElementById("output5").innerHTML = "originalRates " + originalRates;
+    //document.getElementById("output1").innerHTML = "originalRates " + originalRates;
 
     var physics = (1/3) * reqSciPerSys;
     var society = (1/3) * reqSciPerSys;
