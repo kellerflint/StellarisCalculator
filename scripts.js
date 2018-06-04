@@ -149,6 +149,49 @@ function researchTimes(physics, society, engineering, change) {
 
 }
 
+function coloredDisplay(difference) {
+
+  if (difference > 0) {
+      document.getElementById("averageGain").style.color = "#004505";
+      document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+    if (difference < 0) {
+      document.getElementById("averageGain").style.color = "red";
+      document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+
+    difference = newRates[1] - originalRates[1];
+    if (difference > 0) {
+      document.getElementById("physicsGain").style.color = "#004505";
+      document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+    if (difference < 0) {
+      document.getElementById("physicsGain").style.color = "red";
+      document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+
+    difference = newRates[2] - originalRates[2];
+    if (difference > 0) {
+      document.getElementById("societyGain").style.color = "#004505";
+      document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+    if (difference < 0) {
+      document.getElementById("societyGain").style.color = "red";
+      document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+
+    difference = newRates[3] - originalRates[3];
+    if (difference > 0) {
+      document.getElementById("engineeringGain").style.color = "#004505";
+      document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+    if (difference < 0) {
+      document.getElementById("engineeringGain").style.color = "red";
+      document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
+    }
+
+}
+
 function addSystem() {
 
   // Zeros out values from removal to avoid unclear results
@@ -167,45 +210,7 @@ function addSystem() {
   // Colored Display
 
   let difference = newRates[0] - originalRates[0];
-  if (difference > 0) {
-    document.getElementById("averageGain").style.color = "#004505";
-    document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("averageGain").style.color = "red";
-    document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[1] - originalRates[1];
-  if (difference > 0) {
-    document.getElementById("physicsGain").style.color = "#004505";
-    document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("physicsGain").style.color = "red";
-    document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[2] - originalRates[2];
-  if (difference > 0) {
-    document.getElementById("societyGain").style.color = "#004505";
-    document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("societyGain").style.color = "red";
-    document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[3] - originalRates[3];
-  if (difference > 0) {
-    document.getElementById("engineeringGain").style.color = "#004505";
-    document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("engineeringGain").style.color = "red";
-    document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
+  coloredDisplay(difference);
 }
 
 function removeSystem() {
@@ -226,45 +231,7 @@ function removeSystem() {
   // Colored Display
 
   let difference = newRates[0] - originalRates[0];
-  if (difference > 0) {
-    document.getElementById("averageGain").style.color = "#004505";
-    document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("averageGain").style.color = "red";
-    document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[1] - originalRates[1];
-  if (difference > 0) {
-    document.getElementById("physicsGain").style.color = "#004505";
-    document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("physicsGain").style.color = "red";
-    document.getElementById("physicsGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[2] - originalRates[2];
-  if (difference > 0) {
-    document.getElementById("societyGain").style.color = "#004505";
-    document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("societyGain").style.color = "red";
-    document.getElementById("societyGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
-  difference = newRates[3] - originalRates[3];
-  if (difference > 0) {
-    document.getElementById("engineeringGain").style.color = "#004505";
-    document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-  if (difference < 0) {
-    document.getElementById("engineeringGain").style.color = "red";
-    document.getElementById("engineeringGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
-  }
-
+  coloredDisplay(difference);
 }
 
 // Clear functions
