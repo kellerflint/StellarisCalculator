@@ -1,20 +1,22 @@
-// Constant values
-var systemCost = .01;
-var planetCost = .05;
+"use strict";
 
-var tierFiveBaseCost = 20000;
+// Constant values
+let systemCost = .01;
+let planetCost = .05;
+
+let tierFiveBaseCost = 20000;
 
 // Globals
-var pacifistMod = 0;
+let pacifistMod = 0;
 
-var genSciMod = 0;
+let genSciMod = 0;
 
-var basePHY = 5;
-var basePHY = 5;
-var basePHY = 5;
+let basePHY = 5;
+let baseSOC = 5;
+let baseENG = 5;
 
-var sigSystems = 1;
-var sigPlanets = 1;
+let sigSystems = 1;
+let sigPlanets = 1;
 
 function main() {
   update();
@@ -52,24 +54,24 @@ function update() {
 
 function sysSciReq() {
 
-  var difference = 1;
+  let difference = 1;
 
-  var originalRates = researchRate(basePHY, baseSOC, baseENG, 0);
+  let originalRates = researchRate(basePHY, baseSOC, baseENG, 0);
 
-  var reqSciPerSys = 1;
+  let reqSciPerSys = 1;
 
   // Calcuations
   while (difference > 0) {
 
-    var originalRates = researchRate(0, 0, 0, 0);
+    originalRates = researchRate(0, 0, 0, 0);
     //document.getElementById("output1").innerHTML = "originalRates " + originalRates;
 
-    var physics = (1/3) * reqSciPerSys;
-    var society = (1/3) * reqSciPerSys;
-    var engineering = (1/3) * reqSciPerSys;
+    let physics = (1/3) * reqSciPerSys;
+    let society = (1/3) * reqSciPerSys;
+    let engineering = (1/3) * reqSciPerSys;
 
 
-    var newRates = researchRate(physics, society, engineering, 1);
+    let newRates = researchRate(physics, society, engineering, 1);
 
     difference = originalRates[0] - newRates[0];
 
@@ -82,7 +84,7 @@ function sysSciReq() {
 
 function displayResearchRate() {
 
-  var rates = researchRate(0, 0, 0, 0);
+  let rates = researchRate(0, 0, 0, 0);
 
   document.getElementById("avgResearchRate").innerHTML = "<b>Research Rate:</b> " + (Math.round(rates[0] * 10)/10);
   document.getElementById("phyResearchRate").innerHTML = "&ensp; &ensp; Physics: " + (Math.round(rates[1] * 10)/10);
@@ -91,7 +93,7 @@ function displayResearchRate() {
 }
 
 function displayResearchTimes() {
-  var times = researchTimes(0, 0, 0, 0);
+  let times = researchTimes(0, 0, 0, 0);
 
   document.getElementById("phyResearchTime").innerHTML = "&ensp; &ensp; Physics (months): " + (Math.round(times[0] * 10)/10);
   document.getElementById("socResearchTime").innerHTML = "&ensp; &ensp; Society (months): " + (Math.round(times[1] * 10)/10);
@@ -102,19 +104,19 @@ function displayResearchTimes() {
 // physics, society and engineering are add/remove values (if any)
 function researchRate(physics, society, engineering, change) {
 
-  var rateSystems = sigSystems + change;
+  let rateSystems = sigSystems + change;
 
-  var penalty = 1 + ((planetCost * sigPlanets) +
+  let penalty = 1 + ((planetCost * sigPlanets) +
                      (systemCost * rateSystems));
 
-  var avgResearch = (basePHY + baseSOC + baseENG) +
+  let avgResearch = (basePHY + baseSOC + baseENG) +
                     (physics + society + engineering);
 
-  var researchRate = 1/(penalty/(avgResearch * genSciMod));
+  let researchRate = 1/(penalty/(avgResearch * genSciMod));
 
-  var phyResearchRate = 1/(penalty/((basePHY+physics)*genSciMod));
-  var socResearchRate = 1/(penalty/((baseSOC+society)*genSciMod));
-  var engResearchRate = 1/(penalty/((baseENG+engineering)*genSciMod));
+  let phyResearchRate = 1/(penalty/((basePHY+physics)*genSciMod));
+  let socResearchRate = 1/(penalty/((baseSOC+society)*genSciMod));
+  let engResearchRate = 1/(penalty/((baseENG+engineering)*genSciMod));
 
   return [researchRate, phyResearchRate, socResearchRate, engResearchRate];
 
@@ -123,11 +125,11 @@ function researchRate(physics, society, engineering, change) {
 // Returns research times for 5th tier technologies for each category
 function researchTimes(physics, society, engineering, change) {
 
-  var rateSystems = sigSystems + change;
+  let rateSystems = sigSystems + change;
 
-  var penalty = 1 + (rateSystems * systemCost) + (sigPlanets * planetCost);
+  let penalty = 1 + (rateSystems * systemCost) + (sigPlanets * planetCost);
 
-  var totalCost = tierFiveBaseCost * penalty;
+  let totalCost = tierFiveBaseCost * penalty;
 
   document.getElementById("output1").innerHTML = totalCost;
   document.getElementById("output2").innerHTML = tierFiveBaseCost;
@@ -135,13 +137,13 @@ function researchTimes(physics, society, engineering, change) {
   document.getElementById("output4").innerHTML = sigSystems;
   document.getElementById("output5").innerHTML = change;
 
-  var totalPhysics = (basePHY + physics) * genSciMod;
-  var totalSociety = (baseSOC + society) * genSciMod;
-  var totalEngineering = (baseENG + engineering) * genSciMod;
+  let totalPhysics = (basePHY + physics) * genSciMod;
+  let totalSociety = (baseSOC + society) * genSciMod;
+  let totalEngineering = (baseENG + engineering) * genSciMod;
 
-  var physicsMonths = totalCost/totalPhysics;
-  var societyMonths = totalCost/totalSociety;
-  var engineeringMonths = totalCost/totalEngineering;
+  let physicsMonths = totalCost/totalPhysics;
+  let societyMonths = totalCost/totalSociety;
+  let engineeringMonths = totalCost/totalEngineering;
 
   return [physicsMonths, societyMonths, engineeringMonths];
 
@@ -154,17 +156,17 @@ function addSystem() {
   document.getElementById("i_removeSOC").value = 0;
   document.getElementById("i_removeENG").value = 0;
 
-  var originalRates = researchRate(0, 0, 0, 0);
+  let originalRates = researchRate(0, 0, 0, 0);
 
-  var physics = parseFloat(document.getElementById("i_addPHY").value) * pacifistMod;
-  var society = parseFloat(document.getElementById("i_addSOC").value) * pacifistMod;
-  var engineering = parseFloat(document.getElementById("i_addENG").value) * pacifistMod;
+  let physics = parseFloat(document.getElementById("i_addPHY").value) * pacifistMod;
+  let society = parseFloat(document.getElementById("i_addSOC").value) * pacifistMod;
+  let engineering = parseFloat(document.getElementById("i_addENG").value) * pacifistMod;
 
-  var newRates = researchRate(physics, society, engineering, 1);
+  let newRates = researchRate(physics, society, engineering, 1);
 
   // Colored Display
 
-  var difference = newRates[0] - originalRates[0];
+  let difference = newRates[0] - originalRates[0];
   if (difference > 0) {
     document.getElementById("averageGain").style.color = "#004505";
     document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
@@ -213,17 +215,17 @@ function removeSystem() {
   document.getElementById("i_addSOC").value = 0;
   document.getElementById("i_addENG").value = 0;
 
-  var originalRates = researchRate(0, 0, 0, 0);
+  let originalRates = researchRate(0, 0, 0, 0);
 
-  var physics = -1 * (parseFloat(document.getElementById("i_removePHY").value) * pacifistMod);
-  var society = -1 * (parseFloat(document.getElementById("i_removeSOC").value) * pacifistMod);
-  var engineering = -1 * (parseFloat(document.getElementById("i_removeENG").value) * pacifistMod);
+  let physics = -1 * (parseFloat(document.getElementById("i_removePHY").value) * pacifistMod);
+  let society = -1 * (parseFloat(document.getElementById("i_removeSOC").value) * pacifistMod);
+  let engineering = -1 * (parseFloat(document.getElementById("i_removeENG").value) * pacifistMod);
 
-  var newRates = researchRate(physics, society, engineering, -1);
+  let newRates = researchRate(physics, society, engineering, -1);
 
   // Colored Display
 
-  var difference = newRates[0] - originalRates[0];
+  let difference = newRates[0] - originalRates[0];
   if (difference > 0) {
     document.getElementById("averageGain").style.color = "#004505";
     document.getElementById("averageGain").innerHTML = " (" + Math.round(difference * 10)/10 + ")";
@@ -297,11 +299,11 @@ function dropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-window.onclick = function(e) {
+window.addEventListener('click', function(e) {
   if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById("myDropdown");
+    let myDropdown = document.getElementById("myDropdown");
       if (myDropdown.classList.contains('show')) {
         myDropdown.classList.remove('show');
       }
   }
-}
+});
