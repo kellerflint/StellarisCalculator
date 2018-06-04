@@ -1,10 +1,10 @@
 "use strict";
 
 // Constant values
-let systemCost = .01;
-let planetCost = .05;
+const systemCost = .01;
+const planetCost = .05;
 
-let tierFiveBaseCost = 20000;
+const tierFiveBaseCost = 20000;
 
 // Globals
 let pacifistMod = 0;
